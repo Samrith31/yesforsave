@@ -1,3 +1,4 @@
+// Import statements
 import React from 'react';
 import Image from 'next/image';
 import banner from '@/public/banner.jpg';
@@ -16,7 +17,7 @@ interface MinistryPageProps {
   features?: Feature[];
 }
 
-const MinistryPage: React.FC<MinistryPageProps> = ({
+const MinistryPage = ({
   heading = "Elijah's Fire Faith Ministry (Evangelism & Outreach)",
   description = "We spread the Gospel through local and global outreach programs, revival, healing prayer meet as online evangelism. Our mission is to bring the light of Christ to the world and help transform lives. The following are our ministry activities:",
   
@@ -49,7 +50,7 @@ const MinistryPage: React.FC<MinistryPageProps> = ({
       description: "Christmas toy drives, Thanksgiving meals, and back-to-school events—bringing joy and relief during key moments throughout the year.",
     },
   ],
-}) => {
+}: MinistryPageProps) => {
   return (
     <div>
       <div className="overflow-hidden">

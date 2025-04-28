@@ -1,24 +1,37 @@
-import React from 'react'
+import React from 'react';
 import Image from 'next/image';
-import banner from '@/public/banner.jpg'
-import { FcOk } from "react-icons/fc";
+import banner from '@/public/banner.jpg';
+import { FcOk } from 'react-icons/fc';
 
-const MinistryPage = ({
-  heading = "  Elijah's Fire Faith Ministry (Evangelism & Outreach)",
-  description = "We spread the Gospel through local and global outreach programs, revival, healing prayer meet  as  online evangelism. Our mission is to bring the light of Christ to the world and help transform lives. The following are our ministry activities:",
+// Define the types for the props
+interface Feature {
+  image: string;
+  title: string;
+  description: string;
+}
+
+interface MinistryPageProps {
+  heading?: string;
+  description?: string;
+  features?: Feature[];
+}
+
+const MinistryPage: React.FC<MinistryPageProps> = ({
+  heading = "Elijah's Fire Faith Ministry (Evangelism & Outreach)",
+  description = "We spread the Gospel through local and global outreach programs, revival, healing prayer meet as online evangelism. Our mission is to bring the light of Christ to the world and help transform lives. The following are our ministry activities:",
   
   features = [
     {
       image: "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=861,h=489,fit=crop/YbNaP4oDnWC621jn/img_20240121_234205-A85pvzk1PkfVbODG.jpg",
       title: "Revival & Healing Meetings ",
       description:
-        "Through powerful revival events, we aim to  ignite faith, see  miracles  happend and experience spiritual renewal. Our focus is on healing, deliverance and reviving hearts for God.",
+        "Through powerful revival events, we aim to ignite faith, see miracles happen and experience spiritual renewal. Our focus is on healing, deliverance and reviving hearts for God.",
     },
     {
       image: "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=861,h=489,fit=crop/YbNaP4oDnWC621jn/img_20240121_234205-A85pvzk1PkfVbODG.jpg",
       title: "Children & Youth Outreach",
       description:
-        "Mentorship programs, tutoring, and faith-based youth activities that empower the next generation with God’s truth, academic support and positive role models.",
+        "Mentorship programs, tutoring, and faith-based youth activities that empower the next generation with God’s truth, academic support, and positive role models.",
     },
     {
       image: "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=861,h=489,fit=crop/YbNaP4oDnWC621jn/img_20240121_234205-A85pvzk1PkfVbODG.jpg",
@@ -43,19 +56,21 @@ const MinistryPage = ({
         <div className="container text-center mt-10 py-5 mx-auto lg:max-w-5xl md:max-w-xl bg-red-100 rounded-md">
           <Image
             src={banner}
-            style={{
-              width: "100%",
-              display: "block",
-              cursor: "pointer",
-              border: "1px solid white",
-              background: "white",
-            }}
             alt="about banner"
+            layout="responsive"
+            width={1200} // Provide width for responsive image loading
+            height={600} // Provide height to maintain aspect ratio
+            style={{
+              display: 'block',
+              cursor: 'pointer',
+              border: '1px solid white',
+              background: 'white',
+            }}
           />
           <h2 className="text-3xl font-semibold text-pretty md:mb-4 md:text-4xl lg:mb-2 lg:max-w-3xl lg:text-3xl mx-auto text-red-700 underline-offset-8 underline pb-5 -mt-10 pt-16">
             ABOUT US
           </h2>
-          <p className="lg:text-4xl  md:text-2xl text-xl lg:px-44 font-(family-name:--font-unna) text-gray-800 px-5 pb-3">
+          <p className="lg:text-4xl md:text-2xl text-xl lg:px-44 font-(family-name:--font-unna) text-gray-800 px-5 pb-3">
             As a startup Ministry and NGO, we aim to:
           </p>
           <ul className="lg:text-2xl text-start lg:px-28 md:px-8 px-6">

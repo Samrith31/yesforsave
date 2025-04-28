@@ -1,5 +1,3 @@
-
-
 interface Feature {
   image: string;
   title: string;
@@ -71,6 +69,20 @@ const Timeline3 = ({
             <p className="font-medium text-muted-foreground md:text-xl">
               {description}
             </p>
+            <div className="mt-8 flex space-x-4">
+              <a
+                href={buttons.primary.url}
+                className="px-6 py-3 bg-blue-500 text-white rounded-lg"
+              >
+                {buttons.primary.text}
+              </a>
+              <a
+                href={buttons.secondary.url}
+                className="px-6 py-3 border-2 border-blue-500 text-blue-500 rounded-lg"
+              >
+                {buttons.secondary.text}
+              </a>
+            </div>
           </div>
           <div className="flex flex-col gap-12 md:gap-20">
             {features.map((feature, index) => (
